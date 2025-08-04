@@ -687,4 +687,9 @@ html {
     .form-actions .btn {
         width: 100%;
     }
+}
+
+/* Hide honeypot field */
+.hidden {
+    display: none;
 } 

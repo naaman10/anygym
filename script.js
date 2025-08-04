@@ -165,24 +165,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle registration form submission
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Let Netlify handle the form submission
+        // The form will be processed by Netlify Forms
+        console.log('Registration form submitted to Netlify');
         
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        console.log('Registration data:', data);
+        // Show success message
         alert('Thank you for your interest! We\'ll be in touch soon.');
         closeModal();
     });
 
     // Handle gym group form submission
     gymGroupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Let Netlify handle the form submission
+        // The form will be processed by Netlify Forms
+        console.log('Gym Group Partnership form submitted to Netlify');
         
-        const formData = new FormData(gymGroupForm);
-        const data = Object.fromEntries(formData);
-        
-        console.log('Gym Group Partnership data:', data);
+        // Show success message
         alert('Thank you for your partnership interest! Our team will contact you soon.');
         closeGymGroupModal();
     });
