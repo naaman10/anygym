@@ -165,22 +165,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle registration form submission
     form.addEventListener('submit', function(e) {
-        // Let the form submit naturally to Netlify
-        // The form will redirect to success.html after submission
-        console.log('Registration form submitted to Netlify');
+        e.preventDefault();
         
-        // Close modal immediately
-        closeModal();
+        const formData = new FormData(form);
+        
+        // Submit to Netlify
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            console.log('Registration form submitted to Netlify');
+            alert('Thank you for your interest! We\'ll be in touch soon.');
+            closeModal();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
     });
 
     // Handle gym group form submission
     gymGroupForm.addEventListener('submit', function(e) {
-        // Let the form submit naturally to Netlify
-        // The form will redirect to success.html after submission
-        console.log('Gym Group Partnership form submitted to Netlify');
+        e.preventDefault();
         
-        // Close modal immediately
-        closeGymGroupModal();
+        const formData = new FormData(gymGroupForm);
+        
+        // Submit to Netlify
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            console.log('Gym Group Partnership form submitted to Netlify');
+            alert('Thank you for your partnership interest! Our team will contact you soon.');
+            closeGymGroupModal();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
     });
 });
 

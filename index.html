@@ -126,7 +126,7 @@
                 <h2>Register Your Interest</h2>
                 <button class="modal-close" id="closeModal">&times;</button>
             </div>
-            <form id="registrationForm" class="registration-form" name="member-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+            <form id="registrationForm" class="registration-form">
                 <input type="hidden" name="form-name" value="member-registration" />
                 <p class="hidden">
                     <label>
@@ -170,7 +170,7 @@
                 <h2>Gym Group Partnership</h2>
                 <button class="modal-close" id="closeGymGroupModal">&times;</button>
             </div>
-            <form id="gymGroupForm" class="registration-form" name="gym-partnership" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+            <form id="gymGroupForm" class="registration-form">
                 <input type="hidden" name="form-name" value="gym-partnership" />
                 <p class="hidden">
                     <label>
@@ -217,6 +217,35 @@
             </form>
         </div>
     </div>
+
+    <!-- Hidden forms for Netlify to detect during build -->
+    <form name="member-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+        <input type="hidden" name="form-name" value="member-registration" />
+        <input name="name" type="text" />
+        <input name="email" type="email" />
+        <select name="membership">
+            <option value="basic">Basic Membership - $29/month</option>
+            <option value="premium">Premium Membership - $49/month</option>
+            <option value="elite">Elite Membership - $79/month</option>
+            <option value="corporate">Corporate Membership - Contact for pricing</option>
+        </select>
+        <input name="location" type="text" />
+    </form>
+
+    <form name="gym-partnership" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+        <input type="hidden" name="form-name" value="gym-partnership" />
+        <input name="name" type="text" />
+        <input name="email" type="email" />
+        <input name="company" type="text" />
+        <select name="locations">
+            <option value="1-5">1-5 locations</option>
+            <option value="6-10">6-10 locations</option>
+            <option value="11-20">11-20 locations</option>
+            <option value="21-50">21-50 locations</option>
+            <option value="50+">50+ locations</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
 
     <script src="script.js"></script>
 </body>
