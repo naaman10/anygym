@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyGym - Your Personal Fitness Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>AnyGym</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        One gym membership 
+                        <span class="gradient-text">AnyGym</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        AnyGym is a gym membership that allows you to access any gym in the our network.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" id="registerBtn">
+                            Register Your Interest
+                        </a>
+                        <a href="#" class="btn btn-secondary" id="gymGroupBtn">
+                            Onboard your gym group
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="app-screenshot">
+                        <div class="screenshot-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>App Screenshot</p>
+                            <span>Add your app screenshot here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">AnyGym for members</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Single Gym Membership</h3>
+                        <p>One gym membership, access to all gyms in our network.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Flexible Membership</h3>
+                        <p>Membership tiers to fit all of your excersize needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>Smart Reminders</h3>
+                        <p>Never miss a workout with intelligent notifications and scheduling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <div class="download-content">
+                    <h2>AnyGym for gyms</h2>
+                    <p>Find out what AnyGym can do for your gym.</p>                    <div class="download-buttons">
+                        <a href="#" class="download-btn">
+                            <i class="fab fa-apple"></i>
+                            <div class="download-text">
+                                <span class="download-label">Download on the</span>
+                                <span class="download-platform">App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div class="download-text">
+                                <span class="download-label">Get it on</span>
+                                <span class="download-platform">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Have questions or feedback? We'd love to hear from you!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@any-gym.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register Your Interest</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="registrationForm" class="registration-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="membership">Membership Interest *</label>
+                    <select id="membership" name="membership" required>
+                        <option value="">Select a membership type</option>
+                        <option value="basic">Basic Membership - $29/month</option>
+                        <option value="premium">Premium Membership - $49/month</option>
+                        <option value="elite">Elite Membership - $79/month</option>
+                        <option value="corporate">Corporate Membership - Contact for pricing</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Preferred Location</label>
+                    <input type="text" id="location" name="location" placeholder="City or area">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your fitness goals or any questions you have..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gym Group Modal -->
+    <div id="gymGroupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Gym Group Partnership</h2>
+                <button class="modal-close" id="closeGymGroupModal">&times;</button>
+            </div>
+            <form id="gymGroupForm" class="registration-form">
+                <div class="form-group">
+                    <label for="gymName">Full Name *</label>
+                    <input type="text" id="gymName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gymEmail">Email Address *</label>
+                    <input type="email" id="gymEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyName">Company Name *</label>
+                    <input type="text" id="companyName" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gymLocations">Number of Gym Locations *</label>
+                    <select id="gymLocations" name="locations" required>
+                        <option value="">Select number of locations</option>
+                        <option value="1-5">1-5 locations</option>
+                        <option value="6-10">6-10 locations</option>
+                        <option value="11-20">11-20 locations</option>
+                        <option value="21-50">21-50 locations</option>
+                        <option value="50+">50+ locations</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gymMessage">Tell us about your gym group</label>
+                    <textarea id="gymMessage" name="message" rows="4" placeholder="Tell us about your gym group, current membership base, and what you're looking for in a partnership..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Partnership Request</button>
+                    <button type="button" class="btn btn-secondary" id="cancelGymGroupBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
