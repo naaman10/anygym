@@ -1,4 +1,5 @@
 // Smooth scrolling for navigation links
+console.log('Script.js loaded successfully');
 document.addEventListener('DOMContentLoaded', function() {
     // Get all navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -9,16 +10,28 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            console.log('Link clicked, targetId:', targetId, 'type:', typeof targetId);
             
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+            // Only proceed if targetId is a valid selector (starts with # and has more than just #)
+            if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                console.log('Valid targetId, proceeding with scroll');
+                try {
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error with querySelector:', error);
+                }
+            } else {
+                console.log('Invalid targetId, skipping scroll');
             }
         });
     });
@@ -100,6 +113,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelBtn');
     const form = document.getElementById('registrationForm');
 
+    console.log('Modal elements found:', {
+        modal: modal,
+        registerBtn: registerBtn,
+        closeBtn: closeBtn,
+        cancelBtn: cancelBtn,
+        form: form
+    });
+
     // Gym Group Modal
     const gymGroupModal = document.getElementById('gymGroupModal');
     const gymGroupBtn = document.getElementById('gymGroupBtn');
@@ -107,18 +128,59 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelGymGroupBtn = document.getElementById('cancelGymGroupBtn');
     const gymGroupForm = document.getElementById('gymGroupForm');
 
-    // Open registration modal
-    registerBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+    console.log('Gym Group Modal elements found:', {
+        gymGroupModal: gymGroupModal,
+        gymGroupBtn: gymGroupBtn,
+        closeGymGroupBtn: closeGymGroupBtn,
+        cancelGymGroupBtn: cancelGymGroupBtn,
+        gymGroupForm: gymGroupForm
     });
 
+    // Open registration modal
+    console.log('registerBtn found:', registerBtn);
+    if (registerBtn) {
+        registerBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Main register button clicked');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                console.log('Modal should be visible now');
+            } else {
+                console.log('Modal not found!');
+            }
+        });
+    } else {
+        console.log('Register button not found!');
+    }
+
+    // Open registration modal from features section
+    const registerBtnFeatures = document.getElementById('registerBtnFeatures');
+    console.log('registerBtnFeatures found:', registerBtnFeatures);
+    if (registerBtnFeatures) {
+        registerBtnFeatures.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Features register button clicked');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
     // Open gym group modal
-    gymGroupBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        gymGroupModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+    const gymGroupBtns = document.querySelectorAll('#gymGroupBtn');
+    console.log('gymGroupBtns found:', gymGroupBtns.length);
+    gymGroupBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Gym group button clicked');
+            if (gymGroupModal) {
+                gymGroupModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                console.log('Gym group modal should be visible now');
+            } else {
+                console.log('Gym group modal not found!');
+            }
+        });
     });
 
     // Close modal functions
@@ -213,7 +275,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Add mobile menu functionality (for future enhancement)
 function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+    if (navLinks) {
+        navLinks.classList.toggle('active');
+    }
 }
 
 // Add this to HTML if you want a mobile menu button
