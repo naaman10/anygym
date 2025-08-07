@@ -406,6 +406,29 @@ body {
     color: white;
 }
 
+.footer-badge {
+    display: flex;
+    align-items: center;
+}
+
+.coming-soon {
+    background: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.coming-soon:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
 .footer-social {
     display: flex;
     gap: 1rem;
