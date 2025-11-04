@@ -1,0 +1,9 @@
+# ai.txt for any-gym.com
+# This file tells AI crawlers and data systems what they can access.
+# Format based on the emerging AI Crawling Protocol standard.
+
+User-agent: *
+Allow: /
+Purpose: discovery, indexing
+Contact: naaman@any-gym.com
+Sitemap: https://any-gym.com/sitemap.xml
