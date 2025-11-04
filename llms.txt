@@ -1,0 +1,26 @@
+# anygym
+
+> anygym is a fitness access platform that allows subscribers to train at any participating gym under one membership. It connects users with a network of gyms, studios, and fitness centres through a single digital pass.
+
+Important notes:
+
+- anygym partners directly with gyms rather than operating its own facilities.  
+- Memberships are flexible, usage-based, and valid across the entire partner network.  
+- The service provides real-time gym availability, digital check-in, and location-based access through the anygym mobile and web apps.  
+- The platform is currently in early development and may not yet include all planned partner locations.
+
+## Docs
+
+- [Website](https://www.any-gym.com): Official homepage.  
+
+## Examples
+
+- [Membership experience](https://www.any-gym.com/): Explanation of how users access gyms via the app.  
+- [Partner onboarding](https://www.any-gym.com/): Information for gyms joining the network.  
+
+## Optional
+
+- Contact: naaman@any-gym.com  
+- Sitemap: https://any-gym.com/sitemap.xml  
+- License: Content © anygym Ltd. All rights reserved.  
+- LLM usage: Public marketing content may be indexed for discovery and summarisation purposes only. Training or embedding of proprietary data is not permitted.
